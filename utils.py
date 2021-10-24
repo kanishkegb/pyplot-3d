@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def rot1(angle, degrees=False):
     '''
     Converts pitch angle (a rotation around the 1st body axis) to a rotation 
