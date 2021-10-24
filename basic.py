@@ -426,13 +426,20 @@ class Cube:
         Returns:
             None
         '''
-        print(x)
-        self.p1.draw_at(x + R@self.R1@self.pt1, R@self.R1)
-        self.p2.draw_at(x + R@self.R2@self.pt2, R@self.R2)
-        self.p3.draw_at(x + R@self.R3@self.pt3, R@self.R3)
-        self.p4.draw_at(x + R@self.R4@self.pt4, R@self.R4)
-        self.p5.draw_at(x + R@self.R5@self.pt5, R@self.R5)
-        self.p6.draw_at(x + R@self.R6@self.pt6, R@self.R6)
+
+        # self.p1.draw_at(x + R@self.R1@self.pt1, R@self.R1)
+        # self.p2.draw_at(x + R@self.R2@self.pt2, R@self.R2)
+        # self.p3.draw_at(x + R@self.R3@self.pt3, R@self.R3)
+        # self.p4.draw_at(x + R@self.R4@self.pt4, R@self.R4)
+        # self.p5.draw_at(x + R@self.R5@self.pt5, R@self.R5)
+        # self.p6.draw_at(x + R@self.R6@self.pt6, R@self.R6)
+
+        self.p1.draw_at(x + self.pt1, R@self.R1)
+        self.p2.draw_at(x + self.pt2, R@self.R2)
+        self.p3.draw_at(x + self.pt3, R@self.R3)
+        self.p4.draw_at(x + self.pt4, R@self.R4)
+        self.p5.draw_at(x + self.pt5, R@self.R5)
+        self.p6.draw_at(x + self.pt6, R@self.R6)
 
 
 if __name__ == '__main__':
@@ -451,8 +458,8 @@ if __name__ == '__main__':
     # p1.draw()
     
     c1 = Cube(ax, [3, 4, 5])
-    c1.draw_at([1,0,0], ypr_to_R([0,0,0]))
-    # c1.draw_at([0,0,0], ypr_to_R([np.pi/4,0,0]))
+    # c1.draw_at([1,0,0], ypr_to_R([0,0,0]))
+    c1.draw_at([0,0,0], ypr_to_R([np.pi/4,0,0]))
 
     ax.set_xlim([-5, 5])
     ax.set_ylim([-5, 5])
