@@ -427,6 +427,7 @@ class Cube:
             None
         '''
 
+        raise NotImplementedError('This has not been implemented correctly')
         # self.p1.draw_at(x + R@self.R1@self.pt1, R@self.R1)
         # self.p2.draw_at(x + R@self.R2@self.pt2, R@self.R2)
         # self.p3.draw_at(x + R@self.R3@self.pt3, R@self.R3)
@@ -440,6 +441,7 @@ class Cube:
         self.p4.draw_at(x + self.pt4, R@self.R4)
         self.p5.draw_at(x + self.pt5, R@self.R5)
         self.p6.draw_at(x + self.pt6, R@self.R6)
+
 
 
 if __name__ == '__main__':
