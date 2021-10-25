@@ -1,4 +1,4 @@
-from basic import Sphere, Line, Arrow
+from .basic import Sphere, Line, Arrow
 
 import numpy as np
 

@@ -1,7 +1,7 @@
-from basic import Line, Sphere
-
+from .basic import Line, Sphere
 
 import numpy as np
+
 
 class Camera:
     '''
@@ -90,8 +90,6 @@ class Camera:
         p2 = x + R@np.array([d, -w, h])
         p3 = x + R@np.array([d, -w, -h])
         p4 = x + R@np.array([d, w, -h])
-
-        self.ax.clear()
 
         self.l1.draw_from_to(x, p1)
         self.l2.draw_from_to(x, p2)

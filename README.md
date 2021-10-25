@@ -15,7 +15,10 @@ A Python class for drawing a 3D objects using Python Matplotlib library.
     Alternatively, you can download the repo as a zip file, extract it, rename it to `pyplot3d`, and move it your directory with python codes.
 1. Use the library in your code.
     ```python
-    import pyplot3d.uav
+    from pyplot3d.camera import Camera
+    from pyplot3d.utils import ypr_to_R
+
+    import numpy as np
     import matplotlib.pyplot as plt
 
     plt.style.use('seaborn')
@@ -27,5 +30,11 @@ A Python class for drawing a 3D objects using Python Matplotlib library.
     arm_length = 0.24  # in meters
     uav = Uav(ax, arm_length)
 
-    uav.
+    uav.draw_at([1, 0, 0], ypr_to_R([np.pi/2.0, 0, 0]))
+
+    plt.show()
+    ```
+1. Run the code.
+    ```sh
+    python3 /name/of/your/file
     ```
