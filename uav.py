@@ -3,7 +3,7 @@ from basic import Sphere, Line, Arrow
 import numpy as np
 
 
-class UavPlot:
+class Uav:
     '''
     Draws a quadrotor at a given position, with a given attitude.
     '''
@@ -46,7 +46,7 @@ class UavPlot:
         self.arm_b2 = Line(ax)
     
 
-    def update_plot(self, x=np.array([0.0, 0.0, 0.0]).T, R=np.eye(3)):
+    def draw_at(self, x=np.array([0.0, 0.0, 0.0]).T, R=np.eye(3)):
         '''
         Draw the quadrotor at a given position, with a given direction
 
@@ -82,6 +82,7 @@ class UavPlot:
         self.arm_b2.draw_from_to(x, x + R.dot(-self.b2) * self.arm_length)
 
 
+
 if __name__ == '__main__':
     from utils import ypr_to_R
 
@@ -92,7 +93,7 @@ if __name__ == '__main__':
 
     
     def update_plot(i, x, R):
-        uav_plot.update_plot(x[:, i], R[:, :, i])
+        uav_plot.draw_at(x[:, i], R[:, :, i])
         
         # These limits must be set manually since we use
         # a different axis frame configuration than the
@@ -112,7 +113,7 @@ if __name__ == '__main__':
     ax = fig.gca(projection='3d')
 
     arm_length = 0.24  # in meters
-    uav_plot = UavPlot(ax, arm_length)
+    uav_plot = Uav(ax, arm_length)
 
 
     # Create some fake simulation data
