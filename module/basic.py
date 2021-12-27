@@ -1,3 +1,13 @@
+"""
+.. module:: basic
+   :platform: Unix
+   :synopsis: Generate fundamental 3D shapes.
+
+.. moduleauthor:: Kanishke Gamagedara <kanishkegb@gmail.com>
+
+"""
+
+
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -16,16 +26,17 @@ class Sphere:
         '''
         Initialize the sphere.
 
-        Params:
-            ax: (matplotlib axis) the axis where the sphere should be drawn
-            r: (float) radius of the sphere
-            c: (string) color of the sphere, default 'b'
-            x0: (3x1 numpy.ndarray) initial position of the sphere, default
+        Args:
+            ax (matplotlib axis): the axis where the sphere should be drawn
+            r(float): radius of the sphere
+            c(string): color of the sphere, default 'b'
+            x0(3x1 numpy.ndarray): initial position of the sphere, default
                 is [0, 0, 0]
-            resolution: (int) resolution of the plot, default 20
+            resolution (int): resolution of the plot, default 20
 
         Returns:
             None
+
         '''
 
         self.ax = ax
@@ -45,6 +56,7 @@ class Sphere:
         
         Returns:
             None
+
         '''
 
         vertices = np.linspace(0, 2*np.pi, self.reso+1)
@@ -67,6 +79,7 @@ class Sphere:
         
         Returns:
             None
+
         '''
 
         vertices = np.linspace(0, 2*np.pi, self.reso+1)
@@ -90,7 +103,7 @@ class Arrow:
         '''
         Initialize the arrow.
 
-        Params:
+        Args:
             ax: (matplotlib axis) the axis where the arrow should be drawn
             direction: (3x1 numpy.ndarray) direction of the arrow
             c: (string) color of the arrow, default = 'b'
@@ -100,6 +113,7 @@ class Arrow:
 
         Returns:
             None
+
         '''
 
         self.ax = ax
@@ -119,6 +133,7 @@ class Arrow:
         
         Returns:
             None
+
         '''
 
         x = self.x0
@@ -144,6 +159,7 @@ class Arrow:
         
         Returns:
             None
+
         '''
         
         self.ax.quiver(x[0], x[1], x[2], \
@@ -163,7 +179,8 @@ class Line:
         x1=np.array([1.0, 0.0, 0.0]).T):
         '''
         Initialize the line.
-        Params:
+
+        Args:
             ax: (matplotlib axis) the axis where the line should be drawn
             c: (string) color of the arrow, default = 'b'
             x0: (3x1 numpy.ndarray) start of the line, 
@@ -173,6 +190,7 @@ class Line:
                 
         Returns:
             None
+
         '''
 
         self.ax = ax
@@ -185,11 +203,13 @@ class Line:
         '''
         Draw the line with the initially defined parameter when the class was
         instantiated.
+
         Args:
             None
         
         Returns:
             None
+
         '''
         
         self.ax.plot([self.x0[0], self.x1[0]], \
@@ -202,6 +222,7 @@ class Line:
         x1=np.array([1.0, 0.0, 0.0]).T):
         '''
         Draw the line between two points.
+
         Args:
             x0: (3x1 numpy.ndarray) start of the line, 
                 default = [0.0, 0.0, 0.0]
@@ -210,6 +231,7 @@ class Line:
         
         Returns:
             None
+
         '''
         
         self.ax.plot([x0[0], x1[0]], \
@@ -227,7 +249,7 @@ class Plane:
         R=np.eye(3), resolution=1):
         '''
         Initialize the sphere.
-        Params:
+        Args:
             ax: (matplotlib axis) the axis where the plane should be drawn
             h = (float): height of the plane (x axis)
             w = (float): width of the plane (y axis)
@@ -240,6 +262,7 @@ class Plane:
         
         Returns:
             None
+
         '''
 
         self.ax = ax
@@ -263,6 +286,7 @@ class Plane:
         
         Returns:
             None
+
         '''
 
         if self.uvw.size == 0:
@@ -302,6 +326,7 @@ class Plane:
         
         Returns:
             None
+
         '''
 
         if self.uvw.size == 0:
@@ -339,10 +364,11 @@ class Cube:
         R=np.eye(3), resolution=10):
         '''
         Initialize the cube.
-        Params:
+
+        Args:
             ax: (matplotlib axis) the axis where the cube should be drawn
             dimensions = (3x1 numpy.ndarray): dimensions along each axis
-            c: (string) color of the cube, default 'b'
+            c (string): color of the cube, default 'b'
             x: (3x1 numpy.ndarray) initial position of the cube, default
                 is [0, 0, 0]
             R: (3x1 numpy.ndarray) attitude of the cube, 
@@ -351,6 +377,7 @@ class Cube:
         
         Returns:
             None
+
         '''
 
         self.ax = ax
@@ -404,6 +431,7 @@ class Cube:
         
         Returns:
             None
+
         '''
 
         self.p1.draw()
@@ -417,6 +445,7 @@ class Cube:
     def draw_at(self, x=np.array([0.0, 0.0, 0.0]).T, R=np.eye(3)):
         '''
         Draw the camera at a given point and attitude.
+        
         Args:
             x: (3x1 numpy.ndarray) position of camera,
                 default = [0.0, 0.0, 0.0]
@@ -425,6 +454,7 @@ class Cube:
         
         Returns:
             None
+
         '''
 
         raise NotImplementedError('This has not been implemented correctly')

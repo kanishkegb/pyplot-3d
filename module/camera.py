@@ -11,7 +11,8 @@ class Camera:
     def __init__(self, ax, c='b', x=np.array([0.0, 0.0, 0.0]).T, R=np.eye(3)):
         '''
         Initialize the camera.
-        Params:
+
+        Args:
             ax: (matplotlib axis) the axis where the line should be drawn
             direction: (3x1 numpy.ndarray) direction of the arrow
             c: (string) color of the arrow, default = 'b'
@@ -22,6 +23,7 @@ class Camera:
                 
         Returns:
             None
+
         '''
 
         self.ax = ax
@@ -52,11 +54,13 @@ class Camera:
         '''
         Draw a camera with the initially defined parameter when the class was
         instantiated.
+
         Args:
             None
         
         Returns:
             None
+
         '''
         
         self.l1.draw()
@@ -73,6 +77,7 @@ class Camera:
     def draw_at(self, x=np.array([0.0, 0.0, 0.0]).T, R=np.eye(3)):
         '''
         Draw the camera at a given point and attitude.
+
         Args:
             x: (3x1 numpy.ndarray) position of camera,
                 default = [0.0, 0.0, 0.0]
@@ -81,6 +86,7 @@ class Camera:
         
         Returns:
             None
+
         '''
         
         d = 0.5

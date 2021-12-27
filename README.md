@@ -38,3 +38,8 @@ A Python class for drawing a 3D objects using Python Matplotlib library.
     ```sh
     python3 /name/of/your/file
     ```
+
+## Generating the Documentation
+```sh
+sphinx-build -b html docs/source/ docs/build/html
+```

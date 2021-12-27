@@ -10,8 +10,10 @@ def rot1(angle, degrees=False):
         angle: (numpy.ndarray) pitch angle
         degrees: (bool) flag to use if the angles are in degrees,
             default = False
+
     Returns:
         R: (numpy.ndarray) 3x3 rotation matrix in SO(3)
+
     '''
 
     if degrees:
@@ -38,8 +40,10 @@ def rot2(angle, degrees=False):
         angle: (numpy.ndarray) roll angle
         degrees: (bool) flag to use if the angles are in degrees,
             default = False
+
     Returns:
         R: (numpy.ndarray) 3x3 rotation matrix in SO(3)
+
     '''
 
     if degrees:
@@ -68,6 +72,7 @@ def rot3(angle, degrees=False):
             default = False
     Returns:
         R: (numpy.ndarray) 3x3 rotation matrix in SO(3)
+
     '''
 
     if degrees:
@@ -95,6 +100,7 @@ def ypr_to_R(ypr, degrees=False):
             default = False
     Returns:
         R: (numpy.ndarray) 3x3 rotation matrix in SO(3)
+        
     '''
 
     R3 = rot3(ypr[0], degrees)
